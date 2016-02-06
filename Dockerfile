@@ -1,4 +1,4 @@
-FROM continuumio/anaconda
+FROM jupyter/notebook
 
 # dependencies
 RUN apt-get update
