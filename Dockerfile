@@ -18,5 +18,8 @@ RUN go get github.com/gophergala2016/gophernotes
 RUN mkdir -p ~/.ipython/kernels/gophernotes
 RUN cp -r $GOPATH/src/github.com/gophergala2016/gophernotes/kernel/* ~/.ipython/kernels/gophernotes
 
+VOLUME /notebooks
+WORKDIR /notebooks
+
 EXPOSE 8888
 CMD ["jupyter", "notebook"]
