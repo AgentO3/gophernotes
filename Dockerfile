@@ -22,4 +22,5 @@ VOLUME /notebooks
 WORKDIR /notebooks
 
 EXPOSE 8888
+ENTRYPOINT ["tini", "--"]
 CMD ["jupyter", "notebook"]
