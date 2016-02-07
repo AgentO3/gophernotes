@@ -2,11 +2,11 @@ FROM jupyter/notebook
 
 # dependencies
 RUN apt-get update
-RUN apt-get install -y pkg-config libzmq-dev build-essential wget
+RUN apt-get install -y pkg-config libzmq-dev build-essential curl bzip2 tar ca-certificates
 
 # set up golang
-RUN wget https://storage.googleapis.com/golang/go1.5.linux-amd64.tar.gz
-RUN tar -C /usr/local -xzf go1.5.linux-amd64.tar.gz
+RUN curl -L https://storage.googleapis.com/golang/go1.5.linux-amd64.tar.gz > golang.tar.gz && \
+  tar -C /usr/local -xzf golang.tar.gz
 ENV PATH /usr/local/go/bin:$PATH
 ENV GOPATH /go
 ENV PATH $GOROOT/bin:$PATH
