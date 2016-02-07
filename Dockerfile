@@ -2,7 +2,7 @@ FROM jupyter/notebook
 
 # dependencies
 RUN apt-get update
-RUN apt-get install -y pkg-config libzmq-dev build-essential
+RUN apt-get install -y pkg-config libzmq-dev build-essential wget
 
 # set up golang
 RUN wget https://storage.googleapis.com/golang/go1.5.linux-amd64.tar.gz
